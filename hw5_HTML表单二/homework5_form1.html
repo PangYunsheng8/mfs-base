@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="keywords" content="html, css, javascript" />
+        <meta name="author" content="mafengshe"/>
+        <meta http-equiv="refresh" content="30"/>
+        <title>form表单练习</title>
+    </head>
+    <body>
+        <form action="/getInfo" method="POST" enctype="multipart/form-data">
+            <div>用户名：<input type="text" name="first_name" placeholder="请输入用户名"/></div>
+            <div>密码：<input type="password" name="password" /></div>
+            <div>url：<input type="url" name="url" autofocus/></div>
+            <div>email: <input type="email" name="email"/></div>
+            <div>日期: <input type="date" name="data"/></div>
+            <div>时间：<input type="time" name="time"/></div>
+            <hr />
+            <div>
+                多行文本输入控件<br />
+                <textarea rows="5" cols="50" name="textarea">
+                练习多行文本输入控件
+                </textarea>
+            </div>
+            <div>单选框：
+                <input type="radio" name="math" value="English">English
+                <input type="radio" name="math" value="Math">Math
+            </div>
+            <div>复选框：
+                <input type="checkbox" name="A" value="a"/>A
+                <input type="checkbox" name="B" value="b"/>B
+                <input type="checkbox" name="C" value="c"/>C
+            </div>
+            <div>
+                <select name="select">
+                    <option value="cnn" label="CNN">CNN(Concept and Practice)</option>
+                    <option value="rnn" label="RNN" selected>RNN(Concept and Practice)</option>
+                </select>
+            </div>
+            <div>
+                <input type="file" name="file" accept="image/*"/>
+            </div>
+            <br />
+            <button>按钮</button>
+            <div>
+                <input type="submit" name="submit" value="Submit"/>
+                <input type="reset" name="reset" value="reset"/>
+                <input type="button" name="ok" value="ok"/>
+            </div>
+            <div>
+                <input type="hidden" name="hidden" value="10"/>
+            </div>
+            <hr />
+            <input list="cars"/>
+            <datalist id="cars">
+                <option value="bmw" label="1"/>
+                <option value="aaa" label="2"/>
+                <option value="bbb" label="3"/>
+            </datalist>
+            <input type="number" max="100" min="90"/>
+            <br />
+            <input type="text" pattern="[A-Za-z]{3}" title="just put letters"/>
+        </form> 
+    </body>
+</html>
