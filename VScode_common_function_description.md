@@ -11,5 +11,5 @@ vscode全称Visual Studio Code 是微软开发一款IDE，作为一款前端编�
 8. "Ctrl"+"P": 快速打开最近打开的文件
 #### VScode 插件安装和卸载
 ##### 安装插件
-1. 
+1. aaaa
 ##### 卸载插件
