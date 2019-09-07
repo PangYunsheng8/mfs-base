@@ -14,4 +14,4 @@ vscode全称Visual Studio Code 是微软开发一款IDE，作为一款前端编�
 1. 找到左侧导航栏中的如下图红框所示的按钮: 
 ![install_one](imgs/install_step1.png)
 ##### 卸载插件
-aa
+abc
