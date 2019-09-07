@@ -13,9 +13,9 @@ vscode全称Visual Studio Code 是微软开发一款IDE，作为一款前端编�
 ##### 安装插件
 1. 找到左侧导航栏中的如下图红框所示的按钮:  
 ![install_one](imgs/install_step1.png)
-2. 选择要安装的插件，如HTML CSS Support:
+2. 选择要安装的插件，如HTML CSS Support:  
 ![install_two](imgs/install_step2.png)
-3. 安装成功:
+3. 安装成功:  
 ![install_three](imgs/install_step3.png)
 ##### 卸载插件
 ![uninstall](imgs/uninstall.png)
