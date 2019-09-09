@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>盒模型</title>
+        <meta charset="utf-8"/>
+        <style>
+            .box1{
+                height: 100px;
+                width: 100px;
+                border: 10px solid red;
+                line-height: 32px;
+                margin: 20px;
+            }
+            .outer_box{
+                height: 400px;
+                width: 400px;
+                border: 1px solid black;
+                position: relative;
+            }
+            .inner_box{
+                height: 80px;
+                width: 80px;
+                border: 10px solid green;
+                margin: auto auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+            盒模型1<br/>
+            盒模型2<br/>
+            盒模型3
+        </div>
+
+        <div class="outer_box">
+            <div class="inner_box">
+                盒模型1<br/>
+                盒模型2<br/>
+                盒模型3
+            </div>
+        </div>
+    </body>
+</html>
