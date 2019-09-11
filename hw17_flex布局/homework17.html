@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>flex</title>
+        <meta charset="utf-8">
+        <style>
+            .cup{
+                border: 3px solid transparent;
+                width: 1000px;
+                height: 190px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                text-align: center;
+                line-height: 50px;
+            }
+            .cup_top_bottom{
+                border: 1px solid transparent;
+                height: 50px;
+                width: 1000px;
+                background-color: RGBA(169,169,169,0.7);
+            }
+            .cup_top_bottom:nth-child(4){
+                order: -1;
+            }
+            .sidebar{
+                border: 1px solid transparent;
+                height: 50px;
+                width: 200px;
+                background-color: RGBA(0,191,255,0.7);
+            }
+            .mainbar{
+                border: 1px solid transparent;
+                height: 50px;
+                flex-grow: 0.9;
+                background-color: RGBA(0,191,255,1);
+            }
+
+            .dice1{
+                background-color: black;
+                width: 300px;
+                height: 300px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-around;
+                justify-content: space-around;
+            }
+            .dice1_item{
+                width: 100px;
+                height: 100px;
+                background-color: RGBA(255,255,255,1);
+                border: 1px solid black;
+                border-radius: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .dice1_item_circle{
+                width: 25px;
+                height: 25px;
+                background-color: RGBA(0,0,0,1);
+                border-radius: 50%;
+                margin: 5px;
+            }
+            .dice1_item:nth-child(2){
+                justify-content: space-between;
+            }
+            .dice1_item:nth-child(2) .dice1_item_circle:nth-child(1){
+                align-self: flex-start
+            }
+            .dice1_item:nth-child(2) .dice1_item_circle:nth-child(2){
+                align-self: flex-end
+            }
+            .dice1_item:nth-child(3){
+                justify-content: space-around;
+            }
+            .dice1_item:nth-child(3) .dice1_item_circle:nth-child(1){
+                margin: 4px;
+                align-self: flex-start
+            }
+            .dice1_item:nth-child(3) .dice1_item_circle:nth-child(2){
+                margin: 4px;
+                align-self: center
+            }
+            .dice1_item:nth-child(3) .dice1_item_circle:nth-child(3){
+                margin: 4px;
+                align-self: flex-end
+            }
+            .dice1_item:nth-child(4){
+                justify-content: space-between;
+            }
+            .dice1_item:nth-child(4) .dice1_item_circle:nth-child(1){
+                align-self: flex-start;
+            }
+            .dice1_item:nth-child(4) .dice1_item_circle:nth-child(2){
+                align-self: flex-start
+            }
+            .dice1_item:nth-child(4) .dice1_item_circle:nth-child(3){
+                align-self: flex-end
+            }
+            .dice1_item:nth-child(4) .dice1_item_circle:nth-child(4){
+                align-self: flex-end
+            }
+
+            .dice2{
+                background-color: black;
+                width: 1000px;
+                height: 150px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .dice2_item{
+                width: 100px;
+                height: 100px;
+                background-color: RGBA(255,255,255,1);
+                border: 1px solid black;
+                border-radius: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .dice2_item_circle{
+                width: 25px;
+                height: 25px;
+                background-color: RGBA(0,0,0,1);
+                border-radius: 50%;
+                margin: 5px;
+            }
+            .dice2_item:nth-child(2){
+                justify-content: space-between;
+            }
+            .dice2_item:nth-child(2) .dice2_item_circle:nth-child(1){
+                align-self: flex-start
+            }
+            .dice2_item:nth-child(2) .dice2_item_circle:nth-child(2){
+                align-self: flex-end
+            }
+            .dice2_item:nth-child(3){
+                justify-content: space-around;
+            }
+            .dice2_item:nth-child(3) .dice2_item_circle:nth-child(1){
+                margin: 4px;
+                align-self: flex-start
+            }
+            .dice2_item:nth-child(3) .dice2_item_circle:nth-child(2){
+                margin: 4px;
+                align-self: center
+            }
+            .dice2_item:nth-child(3) .dice2_item_circle:nth-child(3){
+                margin: 4px;
+                align-self: flex-end
+            }
+            .dice2_item:nth-child(4){
+                justify-content: space-between;
+                align-content: space-between;
+            }
+            .dice2_item:nth-child(5){
+                justify-content: space-between;
+                align-content: space-around;
+            }
+            .dice2_item:nth-child(5) .dice2_item_circle:nth-child(3){
+                margin-left: 38px;
+                margin-right: 25px;
+                align-self: center
+            }
+            .dice2_item:nth-child(6){
+                justify-content: space-between;
+                align-content: space-around;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cup">
+            <div class="sidebar">侧边栏1固定宽度</div>
+            <div class="mainbar">主内容栏自适应宽度</div>
+            <div class="sidebar">侧边栏2固定宽度</div>
+            <div class="cup_top_bottom">头部</div>
+            <div class="cup_top_bottom">底部</div>
+        </div>
+        <hr />
+
+        <div class="dice1">
+            <div class="dice1_item">
+                <div class="dice1_item_circle"></div>
+            </div>
+            <div class="dice1_item">
+                <div class="dice1_item_circle"></div>
+                <div class="dice1_item_circle"></div>
+            </div>
+            <div class="dice1_item">
+                <div class="dice1_item_circle"></div>
+                <div class="dice1_item_circle"></div>
+                <div class="dice1_item_circle"></div>
+            </div>
+            <div class="dice1_item">
+                <div class="dice1_item_circle"></div>
+                <div class="dice1_item_circle"></div>
+                <div class="dice1_item_circle"></div>
+                <div class="dice1_item_circle"></div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="dice2">
+            <div class="dice2_item">
+                <div class="dice2_item_circle"></div>
+            </div>
+            <div class="dice2_item">
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+            </div>
+            <div class="dice2_item">
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+            </div>
+            <div class="dice2_item">
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+            </div>
+            <div class="dice2_item">
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+            </div>
+            <div class="dice2_item">
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+                <div class="dice2_item_circle"></div>
+            </div>
+        </div>
+    </body>
+</html>

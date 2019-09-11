@@ -1,0 +1,285 @@
+body{
+    margin: 0;
+}
+.container{
+    width: 1170px;
+}
+
+.header{
+    border-bottom: 2px solid RGB(225,225,225);
+}
+.header-main{
+    background-image: url(https://www.golaravel.com/assets/images/header-bg.jpg);
+    background-position-x: 50%;
+    background-position-y: 20%;
+    padding: 40px 0 20px 0;
+}
+.header-main h1{
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 45px;
+}
+.header-svg{
+    height: 100px;
+    padding-bottom: 30px;
+}
+.header-nav{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-nav .link{
+    color: #505050;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: "Helvetica Neue","Helvetica";
+    margin: 16px 25px;
+}
+.header-nav .link:hover{
+    color: red;
+}
+
+.main{
+    background: RGB(235,235,235);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.main .main-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.main .content{
+    background: white;
+    height: 720px;
+    width: 64%;
+    margin: 30px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+.main .post-head{
+    width: 90%;
+    height: 17%;
+    text-align: center;
+}
+.post-head h1{
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 10px;
+}
+.main .post-meta{
+    color: RGB(149,149,149);
+}
+.main .post-meta-link{
+    text-decoration: none;
+    color: red;
+}
+.main .featured-media{
+    width: 90%;
+    height: 50%;
+}
+.main .post-content{
+    width: 90%;
+    height: 10%;
+}
+.main .post-text{
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.main .post-text-link{
+    text-decoration: none;
+    color: red;
+}
+.main .post-permalink{
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.main .post-permalink-link{
+    background-color: #f4645f;
+    text-decoration: none;
+    color: white;
+    border: 13px solid #f4645f;
+    line-height: 10px;
+    border-radius: 7%;
+}
+.main .post-footer{
+    width: 90%;
+    height: 10%;
+    border-bottom: 1px solid #ebebeb;
+}
+.main .aside{
+    background: white;
+    height: 650px;
+    width: 31%; 
+    margin: 30px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+.main .aside_doc{
+    width: 83%;
+    height: 10%;
+    border-bottom: 2px solid #ebebeb;
+    position: relative;
+}
+.aside_doc h4::after{
+    content: "";
+    display: block;
+    width: 80px;
+    border-bottom: 1px solid #f4645f;
+    position: absolute;
+    bottom: -1px;
+}
+.main h4{
+    margin-bottom: 0;
+    font-size: 22px;
+    font-weight: 400
+}
+.main hr{
+    margin-bottom: 0;
+}
+.main .aside_links{
+    width: 83%;
+    height: 83%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    padding-top: 0;
+}
+.main .aside_link{
+    text-decoration: none;
+    color: white;
+    border: 1px solid #f4645f;
+    background-color: #f4645f;
+    width: 100%;
+    margin: 2px;
+    text-align: center;
+    border-radius: 4%;
+    line-height: 35px;
+    font-size:14px;
+}
+.main .aside_link:hover{
+    background-color: black;
+}
+
+.footer{
+    height: 450px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer-container{
+    width: 75%;
+    height: 80%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+}
+.footer-container .footer-aside{
+    width: 30%;
+    height: 80%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.footer-aside .footer-aside-h4{
+    width: 80%;
+    height: 15%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #303030;
+    position: relative;
+}
+.footer-aside h4{
+    font-size: 21px;
+    font-weight: 400;
+}
+.footer-aside h4::after{
+    content: "";
+    display: block;
+    width: 80px;
+    border-bottom: 1px solid #f4645f;
+    position: absolute;
+    bottom: 0px;
+}
+.footer-aside .footer-aside-text{
+    width: 80%;
+    height: 15%;
+    padding: 20px 0;
+    border-bottom: 1px dashed #303030;
+}
+.footer-aside .footer-aside-link{
+    text-decoration: none;
+    color: #959595;
+    font-size: 14px;
+    font-family: "Helvetica Neue","Helvetica","Arial";
+}
+.footer-aside .footer-aside-link:hover{
+    color: #f4645f;
+}
+.footer-aside .footer-aside-time{
+    color: #505050;
+    font-size: 14px;
+    font-family: "Helvetica Neue","Helvetica","Arial";
+}
+.footer-aside-friendlink{
+    width: 80%;
+    height: 60%;
+    border-bottom: 1px dashed #303030;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-aside-friendlink:nth-of-type(3){
+    width: 80%;
+    height: 12%;
+    border-bottom: 1px dashed transparent;
+}
+.footer-aside .footer-aside-link2{
+    text-decoration: none;
+    color: #959595;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 20px 5px 0;
+    padding: 0 5px;
+    font-family: "Helvetica Neue","Helvetica","Arial";
+}
+.footer-aside .footer-aside-link2:hover{
+    background-color: #f4645f;
+    color: white;
+}
+.footer-footer{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+.footer-footer .footer-footer-div{
+    width: 40%; 
+    text-align: center;
+}
+.footer-footer .footer-footer-text{
+    color: RGB(85,85,85);
+    font-size: 13px;
+    line-height: 70px;
+}
+.footer-footer .footer-footer-link{
+    text-decoration: none;
+    color: RGB(85,85,85);
+}
+.footer-footer .footer-footer-link:hover{
+    text-decoration: underline;
+}
