@@ -1,0 +1,88 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>media</title>
+    <style>
+        @media only screen and (max-width:768px){
+            .item{
+                width: 100%;
+            }
+        }
+        .container{
+            width: 100%;
+            background-color: #ddd;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            border-radius: 2%;
+            padding: 0;
+        }
+        .item{
+            padding: 14px 15px;
+            color: gray;
+            text-decoration: none;
+            position: relative;
+        }
+        .ios{
+            background-color: #ccc;
+        }
+        ul{
+            list-style: none;
+            display: none;
+            position: absolute;
+            left: 10px;
+            border: 1px solid black;
+            padding-right: 0px;
+            padding-left: 15px;
+            margin-top: 13;
+        }
+        .link{
+            text-decoration: none;
+            color: gray;    
+        }
+        .item:hover{
+            color: black;
+        }
+        .item:hover .dropdown-menu{
+            display: block;
+        }
+        li{
+            width: 130px;
+            padding:0 0 10px 0;
+            background-color: white;
+        }
+        .divider{
+            border-bottom: 1px solid gray;
+            padding-bottom: 4px;
+        }
+        .dropdown-menu .link{
+            font-size: 14px;
+            font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
+            font-weight: 400;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">菜鸟教程</div>
+        <div class="item ios">IOS</div>
+        <div class="item">SVN</div>
+        <div class="item">
+            <a class="link" href="#" data-toggle="dropdown" aria-expanded="false">Java<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a class="link" href="#">jmeter</a></li>
+                <li><a class="link" href="#">EJB</a></li>
+                <li><a class="link" href="#">Jasper Report</a></li>
+                <li class="divider"></li>
+                <li><a class="link" href="#">分离的链接</a></li>
+                <li class="divider"></li>
+                <li><a class="link" shref="#">另一个分离的链接</a></li>
+			</ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,6 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
         .outer-border{
             width: 70%;
@@ -32,6 +33,27 @@
             font-size: 30px;
             font-weight: 500;
         }
+        .circle{
+            width: 75px;
+            height: 75px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            left: 55px;
+            top: 145px;
+        }
+        .triangle{
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            border-top: 40px solid transparent;
+            border-left: 40px solid transparent;
+            border-right: 40px solid yellow;
+            border-bottom: 40px solid transparent;
+            top: 20px;
+            left: 390px;
+            transform: rotate(-10deg)
+        }
     </style>
 </head>
 <body>
@@ -41,11 +63,7 @@
             <div class="course_chn">课程分享</div>
         </div>
     </div>
-    <div class="circle">
-
-    </div>
-    <div class="triangle">
-        
-    </div>
+    <div class="circle"></div>
+    <div class="triangle"></div>
 </body>
 </html>
