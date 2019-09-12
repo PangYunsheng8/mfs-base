@@ -1,0 +1,131 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>animation</title>
+    <style>
+        @keyframes rotate_animation{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes traslate_animation{
+            0%{
+                transform: translate(0, 0);
+            }
+            25%{
+                transform: translate(-32px, 0);
+            }
+            75%{
+                transform: translate(64px, 0);
+            }
+            100%{
+                transform: translate(0, 0);
+            }
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: RGB(245, 245, 245);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            animation: rotate_animation 5s linear infinite;
+        }
+        .big.circle{
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            margin-top: -12px;
+            animation-delay: -0.9s;
+        }
+        .middle.circle{
+            width: 16px;
+            height: 16px;
+            margin-left: -8px;
+            margin-top: -20px;
+            animation-delay: -0.6s;
+        }
+        .small.circle{
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+            margin-top: -12px;
+            animation-delay: -0.3s;
+        }
+        .green{
+            background-color: #00a691;
+        }
+        .blue{
+            background-color: #1f4e5a;
+        }
+        .yellow{
+            background-color: #ffb265;
+        }
+        .red{
+            background-color: #ff5955;
+        }
+        .circle{
+            border-radius: 50%;
+            animation: traslate_animation 2.5s linear infinite;
+        }
+        .circle-green{
+            transform: rotate(0deg);
+        }
+        .circle-blue{
+            transform: rotate(90deg);
+        }
+        .circle-red{
+            transform: rotate(180deg);
+        }
+        .circle-yellow{
+            transform: rotate(270deg);
+        }
+        .line{
+            width: 64px;
+            height: 24px;
+            position: absolute;
+            top: 85px;
+            left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="line circle-green">
+            <div class="circle big green"></div>
+            <div class="circle middle green"></div>
+            <div class="circle small green"></div>
+        </div>
+        <div class="line circle-blue">
+            <div class="circle big blue"></div>    
+            <div class="circle middle blue"></div>
+            <div class="circle small blue"></div>
+        </div>
+        <div class="line circle-red">
+            <div class="circle big red"></div>    
+            <div class="circle middle red"></div>
+            <div class="circle small red"></div>
+        </div>
+        <div class="line circle-yellow">
+            <div class="circle big yellow"></div>    
+            <div class="circle middle yellow"></div>
+            <div class="circle small yellow"></div>
+        </div>
+    </div>
+</body>
+</html>
