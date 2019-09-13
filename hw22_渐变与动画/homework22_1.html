@@ -6,12 +6,11 @@
     <title>transition</title>
     <style>
         @keyframes sacle_animation{
-            0%{
-                transform: scale(1, 0);
-            }
-            100%{
-                transform: scale(1, 1)
-            }   
+            0%{transform: scale(1,0);}
+            25%{transform: scale(1,1.2);}
+            50%{transform: scale(1,0.85);}
+            75%{transform: scale(1,1.05);}
+            100%{transform: scale(1,1);} 
         }
 
         body{
@@ -63,7 +62,6 @@
             font-weight: 700;
         }
         .drop-down-content{
-            /* height: 50px;  */
             list-style: none;
             display: none;
             position: absolute;
@@ -75,9 +73,8 @@
         }
         .link.sq:hover .drop-down-content{
             display: block;
-            /* height: 100px; 
-            transition: height 2s; */
             animation: sacle_animation 0.5s ease-in;
+            transform-origin: 50% 0; 
         }
         .container li{
             padding: 10px;
