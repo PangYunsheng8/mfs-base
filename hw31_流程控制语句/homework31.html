@@ -1,0 +1,72 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>js</title>
+</head>
+<body>
+    <script>
+        //question 1
+        function func(flag){
+            if (flag == true){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+
+        //question 2
+        var myArray1 = [0, 1, 2, 3, 4, 5, 6];
+        for (var i=0;i<myArray1.length;i++){
+            if (myArray1[i]==5){
+                break;
+            }
+            else{
+                console.log(myArray1[i]);
+            }
+        }
+
+        //question 3
+        var myArray2 = [0, 1, 2, 3, 4, 5, 6];
+        for (var i=0;i<myArray2.length;i++){
+            if (myArray2[i]==5){
+                continue;
+            }
+            else{
+                console.log(myArray2[i]);
+            }
+        }
+
+        //question 4
+        var myArray3 = [0, 1, 2, 3, 4, 5, 6];
+        for (var i=0;i<myArray3.length;i++){
+            switch(myArray3[i]){
+                case 0:
+                    myArray3[i] = "星期日";
+                    break;
+                case 1:
+                    myArray3[i] = "星期一";
+                    break;
+                case 2:
+                    myArray3[i] = "星期二";
+                    break;
+                case 3:
+                    myArray3[i] = "星期三";
+                    break;
+                case 4:
+                    myArray3[i] = "星期四";
+                    break;
+                case 5:
+                    myArray3[i] = "星期五";
+                    break;
+                case 6:
+                    myArray3[i] = "星期六";
+                    break;
+            }
+        }
+        console.log(myArray3);
+    </script>
+</body>
+</html>
