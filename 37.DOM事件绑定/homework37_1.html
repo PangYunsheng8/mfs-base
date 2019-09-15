@@ -1,0 +1,54 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    <div id="award">点击“开始“按钮，开始抽奖！</div>
+    <div class="action">
+        <button id="start">开 始</button>
+        <button id="stop">停 止</button>
+    </div>
+
+    <script>
+        var beginButton = document.getElementById("start");
+        var stopButton = document.getElementById("stop");
+        var awardShow = document.getElementById("award");
+        
+        let timer;
+        beginButton.onclick = change;
+        stopButton.onclick = function(){
+            clearInterval(timer);
+        }
+        function change(){
+            timer = setInterval(getAwardChanging, 50);
+        }
+        function getAwardChanging(){
+            awardClass = getAwardClass();
+            awardShow.innerText = awardClass;
+        }
+        function getAwardClass(){
+            randomNumber = Math.random();
+            var awardClass = "";
+            if (randomNumber == 0){
+                awardClass = "特等奖";
+            }
+            else if (randomNumber > 0 && randomNumber <= 0.1){
+                awardClass = "一等奖";
+            }
+            else if (randomNumber > 0.1 && randomNumber <= 0.4){
+                awardClass = "二等奖";
+            }
+            else if (randomNumber > 0.4 && randomNumber <= 0.7){
+                awardClass = "三等奖";
+            }
+            else{
+                awardClass = "鼓励奖";
+            }
+            return awardClass;
+        }
+    </script>
+</body>
+</html>

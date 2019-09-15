@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM事件绑定</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 300px;
+            background-color: gray;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tabs{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            background-color: aqua;
+        }
+        .contents{
+            width: 100%;
+            height: 250px;
+            background: #ccc;
+            display: flex;
+        }
+        .tab{
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: gray;
+        }
+        .hidden{
+            display: none;
+        }
+        .tab.click{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab">ITEM ONE</div>
+            <div class="tab">ITEM TWO</div>
+            <div class="tab">ITEM THREE</div>
+        </div>
+        <div class="contents">
+            <div class="content">
+                <h2 >Tab One</h2>
+                <p>This is an example tab.</p>
+                <br/>
+                <p>You can put any sort of HTML or react component in here. It even keeps the component state!</p>
+            </div>
+            <div class="content hidden">
+                <h2 >Tab Two</h2>
+                <p>This is another example tab.</p>
+            </div>
+            <div class="content hidden">
+                <h2>Tab Three</h2>
+                <p>This is a third example tab.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tabs = document.getElementsByClassName("tab");
+        var divs = document.querySelectorAll(".contents div");
+        for (let i = 0; i < tabs.length; i++){
+            tabs[i].onclick = function(){
+                for (var j = 0; j < divs.length; j++){
+                    divs[j].className = "hidden";
+                    tabs[j].className = "tab"
+                }
+                divs[i].className = "";
+                tabs[i].className = "tab click"
+                
+                if (i == 2){
+                    alert("A tab with this route property /home was activated.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
