@@ -1,0 +1,108 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.banner{
+    background-image: url(https://work.mafengshe.com/static/imgs/banner.jpg);
+    height: 270px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.banner-text:nth-child(1){
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 46px;
+    font-weight: 700;
+    padding: 10px;
+}
+.banner-text:nth-child(2){
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 28px;
+    padding: 10px; 
+}
+#list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item{
+    width: 22%;
+    height: 148px;
+    background-color: #e04d75;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.item .no{
+    background-color: #20b6d2;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    line-height: 70px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: -13px;
+    left: -13px;
+}
+.item .title{
+    background-color: #00474c;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+.item .info{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: white;
+}
+.item .info span{
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 15px;
+}
+.item .smiling{
+    font-size: 50px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -30px;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+}
+#pager{
+    text-align: center;
+    height: 50px;
+}
+#pager a{
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    margin: 0;
+}
+#pager a.modify{
+    background-color: rgb(238, 110, 115);
+    color: white;
+}

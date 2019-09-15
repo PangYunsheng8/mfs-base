@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page</title>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+    <link href="inconfont/iconfont.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-text">一分耕耘 一分收获</div>
+        <div class="banner-text">NO PAINS NO GAINS</div>
+        </div>
+    <div id="list"></div>
+    <div id="pager"></div>
+
+    <script>
+        //定义item数量以及计算page数量
+        var numberItemPerPage = 12;
+        var numItems = 100;
+        var numPages = Math.ceil(numItems / numberItemPerPage);
+        var data = [];
+        var page = document.getElementById("pager");
+        var oList = document.getElementById("list");
+
+        //生成data
+        for (var i = 0; i < numItems; i++) {
+            data.push({ no: i, title: "标题" + i, clickTimes: 10 * i, replyTimes: i });
+        }
+        function getData(page) {
+            return data.slice(page * 12, page * 12 + 12);
+        }
+
+        //创建page
+        function createPage(numPages){
+            for (var i = 0; i < numPages; i++){
+                var oA = document.createElement("a");
+                oA.innerText = i + 1;
+                oA.setAttribute("href", "#");
+                page.appendChild(oA);
+            }
+        }
+        
+        //创建item
+        function createItem(no, title, clickTimes, replyTimes) {
+            var dom = document.createElement("div");
+            dom.setAttribute("class", "item");
+
+            var html = '<div class="no">' + no + '</div>' +
+                '<div class="title">' + title + '</div>' +
+                '<div class="info"><span class="iconfont icon-guanzhu"></span>' + clickTimes + '<span class="iconfont icon-duihua"></span>' + replyTimes + '</div>' +
+                '<div class="iconfont icon-smiling smiling"></div>';
+            dom.innerHTML = html;
+            return dom;
+        }
+
+        //将item写入dom
+        function fillDom(page) {
+            while (oList.hasChildNodes()){
+                oList.removeChild(oList.lastChild);
+            }
+
+            var data = getData(page);
+            var doms = data.map(function (i) {
+                return createItem(i.no, i.title, i.clickTimes, i.replyTimes)
+            })
+            doms.forEach(function(i){
+                oList.appendChild(i)
+            })
+        }
+
+        //创建page
+        createPage(numPages);
+        
+        //填充第0页
+        fillDom(0);
+        var pages = document.querySelectorAll("#pager a");
+        for (let i = 0; i < pages.length; i++){
+            pages[i].addEventListener("click", function(){
+                fillDom(i);
+                for (var j = 0; j < pages.length; j++){
+                    pages[j].setAttribute("class", "");
+                }
+                pages[i].setAttribute("class", "modify");
+            })
+        }
+    </script>
+</body>
+
+</html>

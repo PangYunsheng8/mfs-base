@@ -38,8 +38,9 @@
             var usernameValue = oUsername.value;
             var passwordValue = oPassword.value;
             var passwordValue2 = oPassword2.value;
-
-            if (usernameValue.length < 6 || usernameValue.length > 16) {
+            
+            var reg = /^[a-zA-Z]([_a-zA-Z0-9]{5,15})$/;
+            if (!reg.test(usernameValue)) {
                 oError.innerText = "用户名必须以字母开头，6-16个英文字符，数字或下划线";
                 return false;
             }
