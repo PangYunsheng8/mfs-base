@@ -4,9 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    
+    <div class="banner">Shopping Cart</div>
+    <div class="container">
+        <div class="goods-container">
+            <div class="goods">
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">1</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">2</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">3</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">4</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">5</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">6</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">7</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+                <div class="item">
+                    <div class="item-image"></div>
+                    <div class="item-id">8</div>
+                    <button class="add-to-cart">加入购物车</button>
+                </div>
+            </div>
+            <div class="pages"></div>
+        </div>
+        <div class="cart">
+            <div class="myCart">我的购物车</div>
+            <div class="item-cart-container">
+                <div class="cart-header">
+                    <div class="cart-header-nva">图片</div>
+                    <div class="cart-header-nva">物品ID</div>
+                    <div class="cart-header-nva">数量</div>
+                    <div class="cart-header-nva">删除</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //得到加入购物车的button
+        var addToCartButtons = document.querySelectorAll(".item .add-to-cart");
+        var itemCartContainer = document.querySelector(".cart .item-cart-container")
+        var maxId = 8;
+        var goodsImgPath = ["http://img14.360buyimg.com/n7/jfs/t1/22718/1/12601/168068/5caedd41E05e879b0/865565d919219154.jpg",
+        "http://img14.360buyimg.com/n7/jfs/t1/1468/11/3377/138213/5b997bf3Eda5b24a4/0ace3ed19582dbe6.jpg",
+        "http://img13.360buyimg.com/n7/jfs/t1/43144/24/5919/134539/5cf7583bE66b588bd/f762bcc912c02d51.jpg",
+        "http://img13.360buyimg.com/n7/jfs/t1/3/15/4536/138660/5b997bf8Ed72ebce7/819dcf182d743897.jpg",
+        "http://img12.360buyimg.com/n7/jfs/t1/45124/2/5820/397999/5d36c0cdEda359655/61f65ac6aae3146b.jpg",
+        "http://img10.360buyimg.com/n7/jfs/t1/79420/38/4736/146092/5d2da5a0E9b55e4b0/77b91a2b2220193e.jpg",
+        "http://img10.360buyimg.com/n7/jfs/t1/77241/13/696/153697/5cee1c4dEd83c97ba/184671c54b16f277.jpg",
+        "http://img11.360buyimg.com/n7/jfs/t1/70572/19/7695/148102/5d5a7e1eE68264fc6/9efd9e927bac7cf7.jpg"]
+        
+        var itemImages = document.querySelectorAll(".item-image");
+        for (var i = 0; i < maxId; i++){
+            console.log(goodsImgPath[i]);
+            itemImages[i].style['background-image'] = "url(" + goodsImgPath[i] + ")";
+        }
+        
+        //绑定“加入购物车”按钮的点击事件
+        for (let i = 0; i < addToCartButtons.length; i++){
+            addToCartButtons[i].addEventListener("click", function(){
+                var itemsInCart = document.querySelectorAll(".cart .item-cart");
+                hasItemOrNot(addToCartButtons[i], itemsInCart);
+            })
+        }
+        
+        //判断cart中是否有该item，如果有将该item在cart中的数量加1，没有将该item添加到cart
+        function hasItemOrNot(addToCartButton, itemsInCart){
+            var itemIdInGoods = addToCartButton.parentElement.children[1].innerText;
+            for (var i = 0; i < itemsInCart.length; i++){
+                var itemIdInCart = itemsInCart[i].children[1].innerText;
+                if (itemIdInGoods == itemIdInCart){
+                    //将该item在cart中的数量加1
+                    var itemNumsInCart = parseInt(itemsInCart[i].children[2].innerText) + 1;
+                    itemsInCart[i].children[2].innerText = itemNumsInCart;
+
+                    //将该item的数量存入localStorage
+                    var localStorageKey = "sumId" + itemIdInGoods;
+                    var localStorageValue = itemNumsInCart;
+                    localStorage.setItem(localStorageKey, localStorageValue);
+                    return;
+                }
+            }
+            //将该item添加到cart，同时添加该item上的“删除”button的点击事件
+            addItemToCart(itemIdInGoods);
+        }
+        
+        //将该item添加到cart
+        function addItemToCart(itemIdInGoods){
+            var dom = document.createElement("div");
+            dom.setAttribute("class", "item-cart");
+
+            var html = '<div class="item-description"></div>' +
+                '<div class="item-id-cart">' + itemIdInGoods + '</div>' +
+                '<div class="item-nums">1</div>' + 
+                '<button class="remove-from-cart">删除</button>';
+            dom.innerHTML = html;
+            dom.children[0].style['background-image'] = "url(" + goodsImgPath[itemIdInGoods-1] + ")";
+            
+            itemCartContainer.appendChild(dom);
+            
+            //给“删除”button添加点击事件
+            var removeButtonInCart = dom.children[3]
+            removeButtonInCart.addEventListener("click", function(){
+                itemCartContainer.removeChild(dom);
+                localStorage.removeItem("itemId" + itemIdInGoods);
+            })
+
+            //localStorage
+            var localStorageKey = "itemId" + itemIdInGoods;
+            var localStorageValue = dom.outerHTML;
+            localStorage.setItem(localStorageKey, localStorageValue);
+        }
+
+        //从localStorage中读取dom数据
+        function loadDomFromLocalStorage(){
+            let conId = 1;
+            while (conId <= maxId){
+                try{
+                    //从localStorage中读取dom
+                    let domFromLocalStorage = document.createElement("div");
+                    domFromLocalStorage.innerHTML = localStorage.getItem("itemId" + conId);
+                    domFromLocalStorage = domFromLocalStorage.childNodes[0];
+                    itemCartContainer.appendChild(domFromLocalStorage);
+                    
+                    //从localStorage中读取item的数量
+                    var sumFromLocalStorage = localStorage.getItem("sumId" + conId);
+                    sumFromLocalStorage = sumFromLocalStorage > 1 ? sumFromLocalStorage : 1;
+                    domFromLocalStorage.children[2].innerText = sumFromLocalStorage;
+                    
+                    //从localStorage中读取的dom也要为其"删除"button添加点击事件
+                    let conId2 = conId;
+                    var removeButtonInCart = domFromLocalStorage.children[3]
+                    removeButtonInCart.addEventListener("click", function(){
+                        itemCartContainer.removeChild(domFromLocalStorage);
+                        localStorage.removeItem("itemId" + conId2);
+                    })
+                }
+                catch(err){
+                    console.log("No dom data about item " + conId)
+                }
+                conId += 1;
+            }
+        }
+        loadDomFromLocalStorage();
+    </script>
 </body>
 </html>
