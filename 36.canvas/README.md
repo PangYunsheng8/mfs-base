@@ -9,3 +9,6 @@ fillStyle和strokeStyle。
 用translate方法和scale方法。
 
 ---
+### 代码题
+预览：https://pangyunsheng8.github.io/mfs-homework/36.canvas/homework36.html
+代码：https://github.com/PangYunsheng8/mfs-homework/blob/master/36.canvas/homework36.html
