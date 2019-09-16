@@ -20,3 +20,4 @@ finally子句起到清理代码的作用，不管try块中是否产生异常，f
 
 ---
 ### 代码题
+https://github.com/PangYunsheng8/mfs-homework/blob/master/32.js%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/homework32.html
