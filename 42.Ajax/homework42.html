@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getItem(callback){
+            var xhr = new XMLHttpRequest()
+            xhr.open("GET", "https://learning-api.mafengshe.com/news", true);
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4 && xhr.status == 200){
+                    callback(xhr.responseText);
+                }
+            }
+            xhr.send();
+        }
+        function consoleLog(text){
+            console.log(text)
+        }
+        getItem(consoleLog);
+    </script>
+</body>
+</html>
