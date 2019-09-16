@@ -8,14 +8,29 @@
 </head>
 
 <body>
+    <div id="container"></div>
     <script>
         //question 1
-        
-
-        //question 2
-        function asyncTask() {
-            throw new Error("An error");
+        var dom = "<div></div>";
+        var containerDom = document.getElementById("container");
+        try{
+            containerDom.appendChild(dom);
         }
+        catch(err){
+            console.log(err);
+        }
+
+        //question 2 需在setTimeout函数中添加try catch语句
+        function asyncTask() {
+            setTimeout(function () {
+                try {
+                    throw new Error("An error");
+                } catch (err) {
+                    console.log(err)
+                }
+            }, 1000);
+        }
+
         try {
             asyncTask()
         } catch (err) {
