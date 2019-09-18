@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //question 2:请手动实现 instanceOf(obj,Clazz) 函数，其行为和js元素提供的 obj instanceof Clazz一致
+        function Books() {
+        }
+        function Desks() {
+        }
+
+        var book = new Books();
+        var desk = new Desks();
+
+        function instanceOf(obj, cls) {
+            if (obj.__proto__ == cls.prototype) {
+                console.log(true);
+            }
+            else {
+                console.log(false);
+            }
+        }
+
+        instanceOf(book, Books);
+        instanceOf(desk, Books);
+        instanceOf(desk, Desks);
+        instanceOf(book, Desks);
+
+        //question 3:请动手实现工厂模式
+        function Employee(type) {
+            var employee;
+            if (type == "programmer") {
+                employee = new Programmer();
+            } else if (type == "designer") {
+                employee = new Designer();
+            }
+            employee.introduction = function () {
+                console.log("I am a " + this.position + ", and " + this.tool);
+            }
+            return employee;
+
+        }
+
+        function Programmer() {
+            this.position = "Front end engineer";
+            this.tool = "I love vscode.";
+        }
+        function Designer() {
+            this.position = "UI designer";
+            this.tool = "I love photoshop.";
+        }
+
+        var employee1 = Employee("programmer");
+        employee1.introduction();
+        var employee2 = Employee("designer");
+        employee2.introduction();
+
+        //question 4:请动手实现单例模式
+        function Singleton(name) {
+            this.name = name;
+        };
+        Singleton.prototype.getName = function () {
+            return this.name;
+        }
+
+        Singleton.getInstance = function () {
+            if (!this.instance) {
+                this.instance = new Singleton();
+            }
+            return this.instance;
+        }
+
+        var a = Singleton.getInstance();
+        var b = Singleton.getInstance();
+
+        console.log(a == b)
+
+        //question 5:
+        class Animal {
+            constructor(){
+            }
+
+            eat(){
+                console.log("Animals can eat");
+            }
+            sleep(){
+                console.log("Animals can sleep")
+            }
+        }
+
+        class Dog extends Animal{
+            eat(){
+                console.log("Dogs can eat");
+            }
+            sleep(){
+                console.log("Dogs can sleep")
+            }
+        }
+
+        class Human extends Animal{
+            eat(){
+                console.log("Human can eat");
+            }
+            sleep(){
+                console.log("Human can sleep")
+            }
+        }
+
+        var dog = new Dog();
+        var human = new Human();
+        dog.eat();
+        dog.sleep();
+        human.eat();
+        human.sleep();
+    </script>
+</body>
+
+</html>
