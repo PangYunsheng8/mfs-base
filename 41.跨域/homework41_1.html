@@ -8,6 +8,13 @@
 </head>
 <body>
     <div>跨域</div>
-    <iframe src="http://www.a.com:8080/other.html"></iframe>
+    <iframe src="http://kuayu.com:8080/41.跨域/other.html"></iframe>
+
+    <script>
+        document.domain = "kuayu.com"
+        setTimeout(function(){
+            console.log(window.frames[0].document.getElementById("mycanvas"));
+        }, 1000)
+    </script>
 </body>
 </html>

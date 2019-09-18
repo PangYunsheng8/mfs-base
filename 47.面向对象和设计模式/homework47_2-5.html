@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -20,18 +20,21 @@
         var desk = new Desks();
 
         function instanceOf(obj, cls) {
-            if (obj.__proto__ == cls.prototype) {
-                console.log(true);
-            }
-            else {
-                console.log(false);
+            while (true) {
+                if (obj === null | obj === undefined | obj === false) {
+                    return false;
+                }
+                if (obj.__proto__ == cls.prototype) {
+                    return true;
+                }
+                obj = obj.__proto__;
             }
         }
 
-        instanceOf(book, Books);
-        instanceOf(desk, Books);
-        instanceOf(desk, Desks);
-        instanceOf(book, Desks);
+        console.log(instanceOf(book, Books));
+        console.log(instanceOf(desk, Books));
+        console.log(instanceOf(desk, Desks));
+        console.log(instanceOf(book, Desks));
 
         //question 3:请动手实现工厂模式
         function Employee(type) {
@@ -84,37 +87,46 @@
 
         //question 5:
         class Animal {
-            constructor(){
+            constructor(name){
+                this.name = name;
             }
 
             eat(){
-                console.log("Animals can eat");
+                console.log(this.name + " can eat");
             }
             sleep(){
-                console.log("Animals can sleep")
+                console.log(this.name + " can sleep")
             }
         }
 
         class Dog extends Animal{
+            constructor(name){
+                super(name);
+            }
+            
             eat(){
-                console.log("Dogs can eat");
+                console.log(this.name + " can eat");
             }
             sleep(){
-                console.log("Dogs can sleep")
+                console.log(this.name + " can sleep")
             }
         }
 
         class Human extends Animal{
+            constructor(name){
+                super(name);
+            }
+
             eat(){
-                console.log("Human can eat");
+                console.log(this.name + " can eat");
             }
             sleep(){
-                console.log("Human can sleep")
+                console.log(this.name + " can sleep")
             }
         }
 
-        var dog = new Dog();
-        var human = new Human();
+        var dog = new Dog("dog");
+        var human = new Human("human");
         dog.eat();
         dog.sleep();
         human.eat();

@@ -10,25 +10,28 @@
 
 <body>
     <script>
-        function Animal(){
-
+        function Animal(name){
+            this.name = name;
         }
 
         Animal.prototype.eat = function(){
-            console.log("Animal can eat");
+            console.log(this.name + " can eat");
         }
         Animal.prototype.sleep = function(){
-            console.log("Animal can sleep");
+            console.log(this.name + " can sleep");
         }
 
-        function Dog(){
-            Animal.call(this);
+        function Dog(name){
+            Animal.call(this, name);
+            this.name = name;
         }
-        function Cat(){
-            Animal.call(this);
+        function Cat(name){
+            Animal.call(this, name);
+            this.name = name;
         }
-        function Human(){
-            Animal.call(this);
+        function Human(name){
+            Animal.call(this, name);
+            this.name = name;
         }
 
         Dog.prototype = Object.create(Animal.prototype)
@@ -36,30 +39,30 @@
         Human.prototype = Object.create(Animal.prototype)
 
         Dog.prototype.bark = function(){
-            console.log("Dog can bark");
+            console.log(this.name + " can bark");
         }
         Cat.prototype.bark = function(){
-            console.log("Cat can bark");
+            console.log(this.name + " can bark");
         }
         Human.prototype.speak = function(){
-            console.log("Human can speak")
+            console.log(this.name + " can speak")
         }
 
-        var dog = new Dog();
-        var cat = new Cat();
-        var human = new Human();
+        var dog = new Dog("dog");
+        var cat = new Cat("cat");
+        var human = new Human("human");
 
-        console.log(dog.bark())
-        console.log(dog.eat())
-        console.log(dog.sleep())
+        dog.bark()
+        dog.eat()
+        dog.sleep()
 
-        console.log(cat.bark())
-        console.log(cat.eat())
-        console.log(cat.sleep())
+        cat.bark()
+        cat.eat()
+        cat.sleep()
 
-        console.log(human.speak())
-        console.log(human.eat())
-        console.log(human.sleep())
+        human.speak()
+        human.eat()
+        human.sleep()
     </script>
 </body>
 
