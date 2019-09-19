@@ -35,3 +35,5 @@ document.domain = "kuayu.html"
 
 ---
 ### 代码题
+1.代码：https://github.com/PangYunsheng8/mfs-homework/blob/master/41.%E8%B7%A8%E5%9F%9F/homework41_1.html
+2.代码：https://github.com/PangYunsheng8/mfs-homework/blob/master/41.%E8%B7%A8%E5%9F%9F/homework41_2.html
