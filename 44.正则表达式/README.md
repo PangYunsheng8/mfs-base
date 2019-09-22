@@ -45,7 +45,9 @@
 ^[\w]+(\.[\w]+)*@[\w]+\.com$
 ```
 ##### 4. 请写出可以检查是否是合法网址的url(可以是http协议或者https协议)
-/http(s)?:\/\/[\w.]+[\w\/]*[\w.]*\??[\w=&\+\%]*/is/
+```
+/http(s)?://[\w.]+[\w/]*[\w.]*\??[\w=&\+\%]*/is/
+```
 ##### 5. 请完成checkPassword(str)这个函数，这个函数可以检查用户输入的密码是否合法，以下是密码要求
 1)6-16个字符
 2)首字符为字母或者下划线
@@ -84,3 +86,4 @@ def removeClass(str,clazz){
 }
 ```
 ##### 7. 已知获取了部分html（截取自码蜂社官网，为minify以后的代码），完成函数getInfo(html)
+代码：https://github.com/PangYunsheng8/mfs-homework/blob/master/44.%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/homework44_7.html
